@@ -1,20 +1,21 @@
 // Find the Largest Number Among Three Numbers
 #include<stdio.h>
 int main(){
-    int a,b,c;
+    double a,b,c;
+    
+     printf("Enter three numbers: ");
     scanf("%d%d%d",&a,&b,&c);
-    printf("Enter a:%d\n");
-    printf("Enter b:%d\n");
-    printf("Enter c:%d\n");
-
-    if(a>=b && a>=c){
-        printf("a is greater");
-
+    if(a>b && a>c){
+        printf("a is greater %d",a);
+        if(b>a && b>c){
+        printf("b is greater %d",b);
     }
-    else if(b>=a && b>=c){
-        printf("b is greater");
     }
     else{
-        printf("c is greater");
+        printf("c is greater %d",c);
     }
-}
+    return 0;
+
+    }
+    
+    
