@@ -10,6 +10,7 @@ void checkingCustomer(int expend){
         printf("Your final product after discount is : %d",expend - discount - 200);
     }
     else{
+        
         // regular customer
         // giving 5% off
         int discount =expend*0.05 ;
