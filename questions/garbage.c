@@ -1,21 +1,41 @@
-#include<stdio.h>
-int arithmetic(int a,int b, int c){
-    if (c==0){
-        return 0;
+#include <stdio.h>
+
+void bubbleSort(int arr[], int n) {
+    int i, j;
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
     }
-    float n = (float)(b-a)/c + 1;
-    if((int) n == 0 && n > 0){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-    
 }
-int main(){
-    int a,b,c;
-    printf("Enter numbers: ");
-    scanf("%d%d%d",&a,&b,&c);
-    printf("%d",arithmetic(a,b,c));
+
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Array before sorting: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    bubbleSort(arr, n);
+
+    printf("Array after sorting: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }
